@@ -30,7 +30,9 @@ export default class App extends React.Component {
             <div>
                 <h1>MobX Example</h1>
                 {loading}
-                <input type="text" onChange={(e) => this.props.state.query = e.target.value}/>
+                <div>
+                    <input type="text" onChange={(e) => this.props.state.query = e.target.value}/>
+                </div>
                 {getUsers()}
                 <div>
                     Total Users: {this.props.state.numberOfUsers}
