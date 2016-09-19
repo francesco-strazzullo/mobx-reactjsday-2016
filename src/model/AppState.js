@@ -31,6 +31,7 @@ class AppState {
     @computed get males() {
         return this.users.filter(user => user.gender === 'male');
     }
+    
     @computed get females() {
         return this.users.filter(user => user.gender !== 'male');
     }
