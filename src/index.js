@@ -4,7 +4,7 @@ import { autorun } from 'mobx';
 
 import App from './components/App';
 
-import { appState, appStateInstance , extendedAppState as state} from './model/AppState';
+import { appState, appStateInstance as state , extendedAppState } from './model/AppState';
 import Users from './service/Users';
 
 const users = Users(state);
