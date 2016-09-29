@@ -1,5 +1,8 @@
+//const URL = "https://randomuser.me/api";
+const URL = "http://localhost:3000";
+
 const _list = (query) => {
-    return fetch('https://randomuser.me/api/?results=20&seed=' + query).then((res) => {
+    return fetch(`${URL}/?results=20&seed=${query}`).then((res) => {
         return res.json();
     }).then((data) => {
         return data.results;
