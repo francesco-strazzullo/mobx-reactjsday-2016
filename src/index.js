@@ -4,13 +4,13 @@ import { autorun } from 'mobx';
 
 import App from './components/App';
 
-import { appState, appStateInstance as state , extendedAppState } from './model/AppState';
+import { appStateInstance as state } from './model/AppState';
 import Users from './service/Users';
 
 const users = Users(state);
 
 autorun(() => {
-    console.log("Total number of users: " + state.numberOfUsers);
+    users.list(state.query);
 });
 
 autorun(() => {
@@ -19,7 +19,7 @@ autorun(() => {
 });
 
 autorun(() => {
-    users.list(state.query);
+    console.log("Total number of users: " + state.numberOfUsers);
 });
 
 render(
