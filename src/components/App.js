@@ -1,25 +1,22 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 
-@observer
-export default class App extends React.Component {
+export default observer(({state,onRemove}) => {
 
-    render(){
-
-        const loading = this.props.state.loading ? <span>Loading</span> : null;
+        const loading = state.loading ? <span>Loading</span> : null;
 
         var getUsers = () => {
-            if(!this.props.state.numberOfUsers){
+            if(!state.numberOfUsers){
                 return null;
             }
 
             return (
                 <ul>
-                    {this.props.state.users.map((user,index) => (
+                    {state.users.map((user,index) => (
                         <li key={index}>
                             <img src={user.picture.thumbnail} width="50"/>
                             <span>{user.name.first} {user.name.last}</span>
-                            <button onClick={() => this.props.users.remove(index)}>Delete</button>
+                            <button onClick={() => onRemove(index)}>Delete</button>
                         </li>
                     ))}
                 </ul>
@@ -31,13 +28,13 @@ export default class App extends React.Component {
                 <h1>MobX Example</h1>
                 {loading}
                 <div>
-                    <input type="text" onChange={(e) => this.props.state.query = e.target.value}/>
+                    <input type="text" onChange={(e) => state.query = e.target.value}/>
                 </div>
                 {getUsers()}
                 <div>
-                    Total Users: {this.props.state.numberOfUsers}
+                    Total Users: {state.numberOfUsers}
                 </div>
             </div>
         );
     }
-}
+);

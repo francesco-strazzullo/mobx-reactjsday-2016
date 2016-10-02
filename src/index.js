@@ -25,6 +25,6 @@ autorun(() => {
 render(
     <App
         state={state}
-        users={users}></App>,
+        onRemove={(index) => users.remove(index)}></App>,
     document.getElementById('root')
 );
