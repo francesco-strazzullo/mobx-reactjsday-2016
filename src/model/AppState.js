@@ -20,6 +20,8 @@ class AppState {
     }
 }
 
+export const appStateInstance = new AppState();
+
 //ES 5
 
 export const appState = observable({
