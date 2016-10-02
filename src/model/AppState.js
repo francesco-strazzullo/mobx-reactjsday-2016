@@ -1,4 +1,4 @@
-import { observable, computed, extendObservable } from 'mobx';
+import { observable, computed } from 'mobx';
 
 //Classes and decorators
 
