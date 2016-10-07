@@ -29,11 +29,9 @@ export default observer(({state,onRemove}) => {
                 {loading}
                 <div>
                     <input type="text" onChange={(e) => state.query = e.target.value}/>
+                    Total Users: {state.numberOfUsers} ({state.males.length} males and {state.females.length} females)
                 </div>
                 {getUsers()}
-                <div>
-                    Total Users: {state.numberOfUsers}
-                </div>
             </div>
         );
     }
